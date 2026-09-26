@@ -16,10 +16,10 @@ The data was pulled through an API and stored as separate CSV files rather than 
 
 The `data` folder contains:
 
-- [`games_live.csv`](../../../../games_live.csv) - game/match-related data
-- [`groups_live.csv`](../../../../groups_live.csv) - group-stage information
-- [`stadiums_live.csv`](../../../../stadiums_live.csv) - stadium information
-- [`teams_live.csv`](../../../../teams_live.csv) - team information
+- [`games_live.csv`](data/games_live.csv) - game/match-related data
+- [`groups_live.csv`](data/groups_live.csv) - group-stage information
+- [`stadiums_live.csv`](data/stadiums_live.csv) - stadium information
+- [`teams_live.csv`](data/teams_live.csv) - team information
 
 ## Tools & Technologies
 
@@ -32,7 +32,7 @@ The `data` folder contains:
 
 ## SQL Analysis
 
-The SQL component ([`worldcup2026.sql`](../../../worldcup2026.sql)) contains queries used to explore and analyze the collected FIFA World Cup data.
+The SQL component ([`worldcup2026.sql`](data/sql/worldcup2026.sql)) contains queries used to explore and analyze the collected FIFA World Cup data.
 
 The SQL workflow includes:
 
@@ -58,7 +58,7 @@ Key SQL concepts include:
 
 ## Python Analysis
 
-Python ([`live_wc_pull_no_pandas.py`](../../live_wc_pull_no_pandas.py)) was used as part of the analytical workflow to work with the collected datasets.
+Python ([`live_wc_pull_no_pandas.py`](data/sql/python/live_wc_pull_no_pandas.py)) was used as part of the analytical workflow to work with the collected datasets.
 
 The Python work includes:
 
@@ -70,7 +70,7 @@ The Python work includes:
 
 ## Power BI
 
-The Power BI project file is [`Fifa worldcup project.pbix`](../Fifa%20worldcup%20project.pbix).
+The Power BI project file is [`Fifa worldcup project.pbix`](<data/sql/python/powerbi/Fifa worldcup project.pbix>).
 
 Power BI was used to turn the prepared data into visual insights.
 
@@ -84,9 +84,11 @@ The workflow includes:
 
 ### Dashboard Screenshot
 
-![FIFA World Cup 2026 Dashboard](screenshots/Dashboard1.png)
+![FIFA World Cup 2026 Dashboard](data/sql/python/powerbi/documentation/screenshots/Dashboard1.png)
 
-Full-size image: [`Dashboard1.png`](screenshots/Dashboard1.png)
+Full-size image: [`Dashboard1.png`](data/sql/python/powerbi/documentation/screenshots/Dashboard1.png)
+
+More detail: [`documentation/README.md`](data/sql/python/powerbi/documentation/README.md)
 
 ## Excel
 
@@ -110,38 +112,39 @@ Techniques include:
 
 ```text
 fifa-world-cup-2026-analytics/
-├── data/
-│   ├── games_live.csv
-│   ├── groups_live.csv
-│   ├── stadiums_live.csv
-│   ├── teams_live.csv
-│   └── sql/
-│       ├── worldcup2026.sql
-│       └── python/
-│           ├── live_wc_pull_no_pandas.py
-│           └── powerbi/
-│               ├── Fifa worldcup project.pbix
-│               └── documentation/
-│                   ├── README.md
-│                   └── screenshots/
-│                       └── Dashboard1.png
+├── README.md
+└── data/
+    ├── games_live.csv
+    ├── groups_live.csv
+    ├── stadiums_live.csv
+    ├── teams_live.csv
+    └── sql/
+        ├── worldcup2026.sql
+        └── python/
+            ├── live_wc_pull_no_pandas.py
+            └── powerbi/
+                ├── Fifa worldcup project.pbix
+                └── documentation/
+                    ├── README.md
+                    └── screenshots/
+                        └── Dashboard1.png
 ```
 
-> Note: the SQL, Python, and Power BI work sit nested inside `data/` (not as separate top-level folders) — `data/sql/` holds the SQL file, `data/sql/python/` holds the Python script, and `data/sql/python/powerbi/` holds the Power BI file and this documentation folder.
+> Note: the SQL, Python, and Power BI work sit nested inside `data/` (not as separate top-level folders) — `data/sql/` holds the SQL file, `data/sql/python/` holds the Python script, and `data/sql/python/powerbi/` holds the Power BI file and its own documentation folder.
 
 ## Key Components
 
 | Component | Technology | File |
 |---|---|---|
-| Data Collection | Python | [`live_wc_pull_no_pandas.py`](../../live_wc_pull_no_pandas.py) |
-| Match Data | CSV | [`games_live.csv`](../../../../games_live.csv) |
-| Group Data | CSV | [`groups_live.csv`](../../../../groups_live.csv) |
-| Stadium Data | CSV | [`stadiums_live.csv`](../../../../stadiums_live.csv) |
-| Team Data | CSV | [`teams_live.csv`](../../../../teams_live.csv) |
-| SQL Analysis | SQL | [`worldcup2026.sql`](../../../worldcup2026.sql) |
-| Dashboard | Power BI | [`Fifa worldcup project.pbix`](../Fifa%20worldcup%20project.pbix) |
-| Dashboard Screenshot | PNG | [`Dashboard1.png`](screenshots/Dashboard1.png) |
-| Documentation | Markdown | `README.md` (this file) |
+| Data Collection | Python | [`live_wc_pull_no_pandas.py`](data/sql/python/live_wc_pull_no_pandas.py) |
+| Match Data | CSV | [`games_live.csv`](data/games_live.csv) |
+| Group Data | CSV | [`groups_live.csv`](data/groups_live.csv) |
+| Stadium Data | CSV | [`stadiums_live.csv`](data/stadiums_live.csv) |
+| Team Data | CSV | [`teams_live.csv`](data/teams_live.csv) |
+| SQL Analysis | SQL | [`worldcup2026.sql`](data/sql/worldcup2026.sql) |
+| Dashboard | Power BI | [`Fifa worldcup project.pbix`](<data/sql/python/powerbi/Fifa worldcup project.pbix>) |
+| Dashboard Screenshot | PNG | [`Dashboard1.png`](data/sql/python/powerbi/documentation/screenshots/Dashboard1.png) |
+| Documentation | Markdown | [`documentation/README.md`](data/sql/python/powerbi/documentation/README.md) |
 
 ## Key Learning Outcomes
 
@@ -159,11 +162,11 @@ This project demonstrates practical experience with:
 ## How to Use
 
 1. Clone or download the repository.
-2. Review the CSV datasets in [`data/`](../../../../).
-3. Use [`worldcup2026.sql`](../../../worldcup2026.sql) in `data/sql/` for database analysis.
-4. Run [`live_wc_pull_no_pandas.py`](../../live_wc_pull_no_pandas.py) from `data/sql/python/`.
-5. Open [`Fifa worldcup project.pbix`](../Fifa%20worldcup%20project.pbix) from `data/sql/python/powerbi/`.
-6. Review this documentation folder (`data/sql/python/powerbi/documentation/`) for the dashboard screenshot and README.
+2. Review the CSV datasets in [`data/`](data/).
+3. Use [`worldcup2026.sql`](data/sql/worldcup2026.sql) in `data/sql/` for database analysis.
+4. Run [`live_wc_pull_no_pandas.py`](data/sql/python/live_wc_pull_no_pandas.py) from `data/sql/python/`.
+5. Open [`Fifa worldcup project.pbix`](<data/sql/python/powerbi/Fifa worldcup project.pbix>) from `data/sql/python/powerbi/`.
+6. Review [`data/sql/python/powerbi/documentation/`](data/sql/python/powerbi/documentation/) for the dashboard screenshot and detailed notes.
 
 ## Project Purpose
 
