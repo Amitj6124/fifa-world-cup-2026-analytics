@@ -2,47 +2,111 @@
 
 ## Project Overview
 
-This project analyzes FIFA World Cup 2026 data using an end-to-end data analytics workflow.
-
-The project combines API-pulled CSV datasets, SQL analysis, Python analysis, Power BI visualization, and Excel-based data preparation.
+This project analyzes FIFA World Cup 2026 data using an end-to-end data analytics workflow. The project combines API-pulled CSV datasets, SQL analysis, Python analysis, Power BI visualization, and Excel-based data preparation.
 
 The objective is to collect structured football data, prepare it, analyze it, and present useful insights through different analytics tools.
 
----
+## Workflow
 
-## Project Workflow
+**API Data → CSV → Data Cleaning / Preparation → SQL Analysis → Python Analysis → Power BI Visualization → Insights**
 
-```text
-API Data
-   ↓
-CSV Data
-   ↓
-Data Cleaning / Preparation
-   ↓
-SQL Analysis
-   ↓
-Python Analysis
-   ↓
-Power BI Visualization
-   ↓
-Insights
-```
+## Dataset
 
----
+The data was pulled through an API and stored as separate CSV files rather than one Excel workbook.
 
-## Tools & Technologies Used
+The `data` folder contains:
 
-- Python
-- SQL / MySQL
-- Power BI
-- Excel
-- CSV
-- GitHub
-- API-based data collection
+- [`games_live.csv`](../../../../games_live.csv) - game/match-related data
+- [`groups_live.csv`](../../../../groups_live.csv) - group-stage information
+- [`stadiums_live.csv`](../../../../stadiums_live.csv) - stadium information
+- [`teams_live.csv`](../../../../teams_live.csv) - team information
 
----
+## Tools & Technologies
 
-## Project Structure
+- **Python** - data analysis and scripting
+- **SQL / MySQL** - querying and analytical analysis
+- **Power BI** - visualization and dashboarding
+- **Microsoft Excel** - data cleaning, lookup functions, Pivot Tables, and supporting analysis
+- **GitHub / GitHub Desktop** - version control and project documentation
+- **API** - data retrieval
+
+## SQL Analysis
+
+The SQL component ([`worldcup2026.sql`](../../../worldcup2026.sql)) contains queries used to explore and analyze the collected FIFA World Cup data.
+
+The SQL workflow includes:
+
+1. Loading CSV data into the database
+2. Inspecting tables and columns
+3. Filtering records
+4. Aggregating data
+5. Joining related datasets
+6. Grouping and summarizing results
+7. Extracting analytical insights
+
+Key SQL concepts include:
+
+- `SELECT`
+- `WHERE`
+- `GROUP BY`
+- `ORDER BY`
+- `HAVING`
+- `JOIN`
+- `COUNT()`
+- `SUM()`
+- `AVG()`
+
+## Python Analysis
+
+Python ([`live_wc_pull_no_pandas.py`](../../live_wc_pull_no_pandas.py)) was used as part of the analytical workflow to work with the collected datasets.
+
+The Python work includes:
+
+- Loading CSV datasets
+- Inspecting data
+- Data preparation
+- Basic analysis
+- Generating analytical outputs
+
+## Power BI
+
+The Power BI project file is [`Fifa worldcup project.pbix`](../Fifa%20worldcup%20project.pbix).
+
+Power BI was used to turn the prepared data into visual insights.
+
+The workflow includes:
+
+1. Importing prepared data
+2. Preparing fields
+3. Creating visualizations
+4. Building an interactive report/dashboard
+5. Communicating findings through visuals
+
+### Dashboard Screenshot
+
+![FIFA World Cup 2026 Dashboard](screenshots/Dashboard1.png)
+
+Full-size image: [`Dashboard1.png`](screenshots/Dashboard1.png)
+
+## Excel
+
+Excel was used for data preparation and supporting analysis.
+
+Techniques include:
+
+- Data cleaning
+- Standardizing records
+- Sorting and filtering
+- `XLOOKUP` / `VLOOKUP`
+- `IF`
+- `COUNTIF`
+- `SUMIF`
+- `SUM`
+- `COUNT`
+- `AVERAGE`
+- Pivot Tables
+
+## Repository Structure
 
 ```text
 fifa-world-cup-2026-analytics/
@@ -63,138 +127,9 @@ fifa-world-cup-2026-analytics/
 │                       └── Dashboard1.png
 ```
 
----
+> Note: the SQL, Python, and Power BI work sit nested inside `data/` (not as separate top-level folders) — `data/sql/` holds the SQL file, `data/sql/python/` holds the Python script, and `data/sql/python/powerbi/` holds the Power BI file and this documentation folder.
 
-# 1. Data Collection
-
-The project uses structured FIFA World Cup 2026 datasets collected through an API-based workflow.
-
-The collected data is stored in CSV format for further analysis.
-
-### Dataset Files
-
-| File | Description |
-|---|---|
-| [`games_live.csv`](../../../../games_live.csv) | Match/game-related data |
-| [`groups_live.csv`](../../../../groups_live.csv) | Group-stage information |
-| [`stadiums_live.csv`](../../../../stadiums_live.csv) | Stadium-related information |
-| [`teams_live.csv`](../../../../teams_live.csv) | Team-related information |
-
-These datasets provide the base data used for SQL, Python, and Power BI analysis.
-
----
-
-# 2. SQL Analysis
-
-The SQL analysis is stored in:
-
-[`worldcup2026.sql`](../../../worldcup2026.sql)
-
-SQL is used to work with the structured FIFA World Cup data and perform analytical queries.
-
-The SQL component helps extract meaningful information from the underlying data before visualization and further analysis.
-
----
-
-# 3. Python Analysis
-
-The Python component is located at:
-
-[`live_wc_pull_no_pandas.py`](../../live_wc_pull_no_pandas.py)
-
-This script is used as part of the data collection workflow.
-
-The project uses Python to work with the FIFA World Cup data and prepare structured CSV datasets for downstream analysis.
-
-The collected datasets are stored in the `data` directory.
-
----
-
-# 4. Power BI Dashboard
-
-The Power BI project file is located at:
-
-[`Fifa worldcup project.pbix`](../Fifa%20worldcup%20project.pbix)
-
-Power BI is used to transform the prepared data into interactive visualizations and dashboards.
-
-The dashboard provides a visual representation of the FIFA World Cup 2026 data and allows users to explore the available information more easily.
-
----
-
-## Dashboard Screenshot
-
-The dashboard screenshot is available here:
-
-[`Dashboard1.png`](screenshots/Dashboard1.png)
-
-![FIFA World Cup 2026 Dashboard](screenshots/Dashboard1.png)
-
----
-
-# 5. Documentation
-
-This README is the main documentation for the Power BI project.
-
-The documentation folder contains:
-
-- [`README.md`](README.md)
-- [`Dashboard1.png`](screenshots/Dashboard1.png)
-
----
-
-# 6. End-to-End Analytics Pipeline
-
-The complete project follows this workflow:
-
-### Step 1: Data Collection
-
-FIFA World Cup 2026 data is collected using an API-based Python workflow.
-
-### Step 2: Data Storage
-
-The collected information is stored in CSV files:
-
-- [`games_live.csv`](../../../../games_live.csv)
-- [`groups_live.csv`](../../../../groups_live.csv)
-- [`stadiums_live.csv`](../../../../stadiums_live.csv)
-- [`teams_live.csv`](../../../../teams_live.csv)
-
-### Step 3: Data Preparation
-
-The collected data is prepared and organized for analytical use.
-
-### Step 4: SQL Analysis
-
-SQL queries are used to analyze the structured data and extract useful information.
-
-See the complete SQL file:
-
-[`worldcup2026.sql`](../../../worldcup2026.sql)
-
-### Step 5: Python Analysis
-
-Python is used as part of the data collection and analytical workflow.
-
-Python script:
-
-[`live_wc_pull_no_pandas.py`](../../live_wc_pull_no_pandas.py)
-
-### Step 6: Power BI Visualization
-
-The prepared data is used in Power BI to create visual dashboards.
-
-Power BI file:
-
-[`Fifa worldcup project.pbix`](../Fifa%20worldcup%20project.pbix)
-
-### Step 7: Insights
-
-The final dashboard helps convert the underlying FIFA World Cup 2026 data into understandable visual insights.
-
----
-
-# 7. Key Components
+## Key Components
 
 | Component | Technology | File |
 |---|---|---|
@@ -206,56 +141,30 @@ The final dashboard helps convert the underlying FIFA World Cup 2026 data into u
 | SQL Analysis | SQL | [`worldcup2026.sql`](../../../worldcup2026.sql) |
 | Dashboard | Power BI | [`Fifa worldcup project.pbix`](../Fifa%20worldcup%20project.pbix) |
 | Dashboard Screenshot | PNG | [`Dashboard1.png`](screenshots/Dashboard1.png) |
-| Documentation | Markdown | `README.md` |
+| Documentation | Markdown | `README.md` (this file) |
 
----
+## Key Learning Outcomes
 
-# 8. Project Objective
+This project demonstrates practical experience with:
 
-The main objective of this project is to demonstrate an end-to-end data analytics workflow using FIFA World Cup 2026 data.
+- API-based data retrieval
+- Working with multiple CSV datasets
+- Data cleaning and preparation
+- SQL querying and analysis
+- Python-based data analysis
+- Power BI visualization
+- Excel analytical techniques
+- Organizing an analytics project using GitHub
 
-The project brings together:
+## How to Use
 
-- Data collection
-- Data preparation
-- SQL analysis
-- Python
-- Business intelligence
-- Data visualization
-- Insight generation
+1. Clone or download the repository.
+2. Review the CSV datasets in [`data/`](../../../../).
+3. Use [`worldcup2026.sql`](../../../worldcup2026.sql) in `data/sql/` for database analysis.
+4. Run [`live_wc_pull_no_pandas.py`](../../live_wc_pull_no_pandas.py) from `data/sql/python/`.
+5. Open [`Fifa worldcup project.pbix`](../Fifa%20worldcup%20project.pbix) from `data/sql/python/powerbi/`.
+6. Review this documentation folder (`data/sql/python/powerbi/documentation/`) for the dashboard screenshot and README.
 
-This provides a complete workflow from structured data collection to analytical visualization.
+## Project Purpose
 
----
-
-# 9. Repository Files
-
-### Data
-
-- [`games_live.csv`](../../../../games_live.csv)
-- [`groups_live.csv`](../../../../groups_live.csv)
-- [`stadiums_live.csv`](../../../../stadiums_live.csv)
-- [`teams_live.csv`](../../../../teams_live.csv)
-
-### SQL
-
-- [`worldcup2026.sql`](../../../worldcup2026.sql)
-
-### Python
-
-- [`live_wc_pull_no_pandas.py`](../../live_wc_pull_no_pandas.py)
-
-### Power BI
-
-- [`Fifa worldcup project.pbix`](../Fifa%20worldcup%20project.pbix)
-
-### Documentation
-
-- [`Dashboard1.png`](screenshots/Dashboard1.png)
-- `README.md`
-
----
-
-## Dashboard Preview
-
-![FIFA World Cup 2026 Dashboard](screenshots/Dashboard1.png)
+This repository serves as a portfolio project demonstrating an end-to-end business/data analytics workflow using structured football data and commonly used analytics tools.
