@@ -46,33 +46,21 @@ Insights
 
 ```text
 fifa-world-cup-2026-analytics/
-│
-└── data/
-    │
-    ├── games_live.csv
-    ├── groups_live.csv
-    ├── stadiums_live.csv
-    ├── teams_live.csv
-    │
-    └── sql/
-        │
-        ├── worldcup2026.sql
-        │
-        └── python/
-            │
-            ├── live_wc_pull_no_pandas.py
-            │
-            └── powerbi/
-                │
-                ├── Fifa worldcup project.pbix
-                │
-                └── documentation/
-                    │
-                    ├── README.md
-                    │
-                    └── screenshots/
-                        │
-                        └── Dashboard1.png
+├── data/
+│   ├── games_live.csv
+│   ├── groups_live.csv
+│   ├── stadiums_live.csv
+│   ├── teams_live.csv
+│   └── sql/
+│       ├── worldcup2026.sql
+│       └── python/
+│           ├── live_wc_pull_no_pandas.py
+│           └── powerbi/
+│               ├── Fifa worldcup project.pbix
+│               └── documentation/
+│                   ├── README.md
+│                   └── screenshots/
+│                       └── Dashboard1.png
 ```
 
 ---
